@@ -68,4 +68,29 @@ console.log(loopthree(5));
 // so here right half of the array we take and find middle until we find the result - 8
 // log2 8 = 3 i.e it will take 3 operator to find the value we looking in an arr length of 8
 
+// different terms of input
+// where inputs are a and b not n
+// any one of these inputs are not equal to n
 
+function differentTermsInput(a,b){
+  // BigO is not O(n+n) =>  O(2n) => O(n)
+  // Bigo is O(a+b) => a&b !== n
+  // a may be 1 and b may be million
+  for(let i=0; i < a; i++){
+    console.log(i)
+  }
+  for (let j = 0; j < b; i++) {
+    console.log(j);
+  }
+
+  // nested for loop 
+  // BigO will be O(a*b)
+  for (let i = 0; i < a; i++) {
+    
+    for (let j = 0; j < b; i++) {
+      console.log(i,j);
+    }
+  }
+  
+
+}
