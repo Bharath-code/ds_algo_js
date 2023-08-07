@@ -12,26 +12,34 @@ class LinkedList {
     this.tail = this.head;
     this.length = 1;
   }
-  push(value){
+  push(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+    this.length++;
+    return this;
+  }
+ unshift(value){
     const node = new Node(value)
     if(!this.head){
         this.head = node
         this.tail = node
     }else{
-        this.tail.next = node
-        this.tail = node
+        node.next = this.head
+        this.head = node
     }
+    
     this.length++
     return this
-  }
+ }
 }
 
 const linkedList = new LinkedList(1);
-console.log(linkedList);
-linkedList.push(2)
-
-linkedList.push(3);
-linkedList.push(4);
-linkedList.push(5);
-console.log(linkedList);
-
+linkedList.unshift(0)
+linkedList.unshift(3)
+console.log(linkedList)
