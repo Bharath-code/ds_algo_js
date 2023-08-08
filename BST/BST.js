@@ -54,6 +54,7 @@ class BST {
     return false;
   }
   // always pass the node not the value
+  // why we use currentNode.left because left of root is where u find min value
   minValueNode(currentNode){
     while(currentNode.left){
         currentNode = currentNode.left
